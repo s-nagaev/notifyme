@@ -37,7 +37,7 @@ async def check_url_setting(url_setting: str) -> None:
         },
     },
 )
-async def sent_notification(payload: CreateNotificationSchema, request: Request) -> dict[str, str]:
+async def send_notification(payload: CreateNotificationSchema, request: Request) -> dict[str, str]:
     logger.info(
         f'Sending notification. Payload received: {payload.dict()}. '
         f'IP: {request.client.host if request.client else None}. '
