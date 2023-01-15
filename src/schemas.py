@@ -10,5 +10,5 @@ class ErrorMessageModel(BaseModel):
 class CreateNotificationSchema(BaseModel):
     setting: Optional[str] = Field(title='Notification target setting.')
     url: Optional[str] = Field(title='Notification Apprise URL.')
-    title: Optional[str] = Field(title='Message title.')
-    body: Optional[str] = Field(title='Message body.')
+    title: str = Field(title='Message title.')
+    body: str = Field(title='Message body.')
