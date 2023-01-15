@@ -139,3 +139,6 @@ dmypy.json
 
 # Static
 static/
+
+# Node
+node_modules/

@@ -1,0 +1,16 @@
+{
+  "name": "notifyme-apib",
+  "description": "NotifyMe API Blueprint documentation",
+  "scripts": {
+    "dev": "npx blueprinter -i doc.apib -s -p 3000",
+    "build": "rm -rf public && mkdir public && npx blueprinter -i doc.apib -o public/index.html"
+  },
+  "keywords": [
+    "notifyme",
+    "apib"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@funboxteam/blueprinter": "5.2.1"
+  }
+}

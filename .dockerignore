@@ -1,7 +1,4 @@
 .DS_Store
-.env.local
-.env.prod
-.env.staging
 .git
 .github
 .idea
@@ -11,7 +8,5 @@
 .vscode
 .mypy_cache
 docker-compose.*yml
-stubborn/settings/.env
-static/
 *.bak
-!.env.test
+apib/
