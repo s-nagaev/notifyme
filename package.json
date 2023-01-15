@@ -3,7 +3,7 @@
   "description": "NotifyMe API Blueprint documentation",
   "scripts": {
     "dev": "npx blueprinter -i doc.apib -s -p 3000",
-    "build": "rm -rf public && mkdir public && npx blueprinter -i doc.apib -o public/index.html"
+    "build": "npx blueprinter -i apib/doc.apib -o index.html"
   },
   "keywords": [
     "notifyme",
