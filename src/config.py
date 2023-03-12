@@ -29,7 +29,7 @@ def get_notify_urls() -> dict[str, str]:
 class Settings(BaseSettings):
     urls: dict[str, str] = get_notify_urls()
     sentry_dsn: Optional[str] = Field(env='sentry_dsn', default=None)
-    environment: Optional[str] = Field(env='environment', default='unknown')
+    environment: Optional[str] = Field(env='environment', default='production')
 
     class Config:
         secrets_dir = '/run/secrets'

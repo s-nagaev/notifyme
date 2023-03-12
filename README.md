@@ -88,7 +88,7 @@ You still may set up NotifyMe using the data stored in the docker secret files. 
 In case you want to integrate NotifyMe with the Sentry, you may optionally provide two additional environment variables:
 
 - `SENTRY_DSN` - should contain a valid Sentry DSN string.
-- `ENVIRONMENT` - should contain environment name (`unknown` by default).
+- `ENVIRONMENT` - should contain environment name (`production` by default).
 
 ## Authorization and authentication
 
@@ -99,8 +99,8 @@ Suppose you need such functionality or want to restrict access to the service in
 ## Built With
 
 - Python 3.9+
-- [FastAPI](https://github.com/tiangolo/fastapi) 0.88+
-- [Apprise](caronc/apprise) 1.2+
+- [FastAPI](https://github.com/tiangolo/fastapi)
+- [Apprise](caronc/apprise)
 
 ## Versioning
 
