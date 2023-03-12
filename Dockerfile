@@ -1,18 +1,18 @@
-FROM python:3.10-alpine3.16 AS builder
+FROM python:3.9-alpine3.16 AS builder
 
 RUN apk add --no-cache cargo gcc build-base
 WORKDIR /app
 COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
-FROM python:3.10-alpine3.16
+FROM python:3.9-alpine3.16
 
 LABEL org.label-schema.schema-version = "1.0"
 LABEL org.label-schema.name = "NotifyMe"
 LABEL org.label-schema.vendor = "nagaev.sv@gmail.com"
 LABEL org.label-schema.vcs-url = "https://github.com/s-nagaev/notifyme"
 
-COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
+COPY --from=builder /usr/local/lib/python3.9/site-packages /usr/local/lib/python3.9/site-packages
 
 WORKDIR /app
 COPY . .
