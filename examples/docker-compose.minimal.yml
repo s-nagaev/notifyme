@@ -1,0 +1,14 @@
+# In this example the service:
+# - listens port 8000
+# - handles only requests providing target URLs, i.e.:
+# curl --request POST --url http://127.0.0.1:8000 --header 'Content-Type: application/json' \
+#      --data '{"url": "tgram://999999999:AAAAAAAAAA-BBBBBBBBBBBBBB/-999999999", "title": "Test", "body": "Some test"}'
+
+version: '3'
+
+services:
+  notifyme:
+    restart: unless-stopped
+    image: pysergio/notifyme:latest
+    ports:
+      - "8000:8000"
