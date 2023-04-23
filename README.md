@@ -1,4 +1,4 @@
-<h1 align="center"><img width=150 src="docs/logo.png" alt="logo"></h1>
+<h1 align="center"><img width=150 src="https://github.com/s-nagaev/notifyme/raw/main/docs/logo.png" alt="logo"></h1>
 
 ![build](https://img.shields.io/github/actions/workflow/status/s-nagaev/notifyme/build.yml)
 [![docker hub](https://img.shields.io/docker/pulls/pysergio/notifyme)](https://hub.docker.com/r/pysergio/notifyme)
