@@ -13,6 +13,7 @@ LABEL org.label-schema.vendor = "nagaev.sv@gmail.com"
 LABEL org.label-schema.vcs-url = "https://github.com/s-nagaev/notifyme"
 
 COPY --from=builder /usr/local/lib/python3.9/site-packages /usr/local/lib/python3.9/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin
 
 WORKDIR /app
 COPY . .
@@ -21,6 +22,6 @@ USER notifyme
 
 EXPOSE 8000
 
-HEALTHCHECK --interval=20s --timeout=3s --start-period=30s CMD python scripts/healthcheck.py || exit 1
+HEALTHCHECK --interval=30s --timeout=3s --start-period=30s CMD python scripts/healthcheck.py || exit 1
 ENTRYPOINT []
 CMD python -m uvicorn src.main:app --host 0.0.0.0 --port 8000 --workers 4

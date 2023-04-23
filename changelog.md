@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2023-04-23
+
+### Fixed
+
+- `/usr/local/bin/python: No module named uvicorn` error while running python 3.9-based images.
+
+### Added
+
+- docker-compose file examples.
+
+### Changed
+
+- Readme updated: added badges and logo, examples fixed.
+
 ## [1.1.0] - 2023-03-12
 
 ### Changed
@@ -27,6 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - API documentation page.
 - README.md file.
 
-[Unreleased]: https://github.com/s-nagaev/notifyme/compare/v1.1.0...v1.0.0
+[Unreleased]: https://github.com/s-nagaev/notifyme/compare/v1.2.0...v1.1.0
+[1.2.0]: https://github.com/s-nagaev/notifyme/tree/v1.2.0
 [1.1.0]: https://github.com/s-nagaev/notifyme/tree/v1.1.0
 [1.0.0]: https://github.com/s-nagaev/notifyme/tree/v1.0.0

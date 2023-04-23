@@ -1,3 +1,11 @@
+<h1 align="center"><img width=150 src="docs/logo.png" alt="logo"></h1>
+
+![build](https://img.shields.io/github/actions/workflow/status/s-nagaev/notifyme/build.yml)
+[![docker hub](https://img.shields.io/docker/pulls/pysergio/notifyme)](https://hub.docker.com/r/pysergio/notifyme)
+[![docker image arch](https://img.shields.io/badge/docker%20image%20arch-amd64%20%7C%20arm64%20%7C%20armv7-informational)](https://hub.docker.com/r/pysergio/notifyme/tags)
+[![docker image size](https://img.shields.io/docker/image-size/pysergio/notifyme/latest)](https://hub.docker.com/r/pysergio/notifyme/tags)
+![license](https://img.shields.io/github/license/s-nagaev/notifyme)
+
 # NotifyMe
 
 NotifyMe is a tiny, lightning-fast, and incredibly simple web service for streamlined notifications. It requires minimal setup and **no database** to run. Based on the powerful Apprise Python module, it can send notifications to a wide variety of destinations, including Telegram, Slack, SMS, and email.
@@ -8,7 +16,7 @@ NotifyMe can also be easily integrated with [Shepherd](https://github.com/djmaze
 
 - linux/amd64
 - linux/arm64
-- linux/arm32/v7 *(Yeah! Your Raspberry Pi is supported!)*
+- linux/arm32v7 *(Yeah! Your Raspberry Pi is supported!)*
 
 ## Getting Started
 
@@ -22,6 +30,7 @@ Please, check the [endpoint API documentation first](https://s-nagaev.github.io/
 ```bash
 docker run -p 8000:8000 pysergio/notifyme:latest
 ```
+The application will listen 
 
 Please note that in the example above, we must provide the target URL every time we call the API endpoint.
 
@@ -40,6 +49,8 @@ services:
       NOTIFYME_DEFAULT: tgram://12345678910:DKFJDHKDS-DKwsksdpORUjdsiYerk/-987654321/
       NOTIFYME_WEBAPP: mailto://server.com?smtp=smtp.server.com&from=noreply@server.com&to=myemail@server.com
       NOTIFYME_MONITOR: discord://4174216298/JHMHI8qBe7bk2ZwO5U711o3dV_js,mailto://server.com?smtp=smtp.server.com&from=noreply@server.com&to=myemail@server.com
+    ports:
+      - "8000:8000"
 ```
 
 Then run the command:
@@ -73,7 +84,7 @@ The approach shown in the example above can be a handful if we want to integrate
 
 Using the Docker Swarm, you may want to store the application settings in the docker secrets. The decrypted secrets are mounted into the container in an in-memory filesystem. The location of the mount point within the container defaults to `/run/secrets/<secret_name>`.
 
-You still may set up NotifyMe using the data stored in the docker secret files. Let's say you have a docker secret named `tgram_notofocation_url`, and you want to keep it in the setting named `NOTIFYME_TGRAM`. All you need is to provide the environment variable named `NOTIFYME_TGRAM_FILE` containing the path to the docker secret, i.e., `NOTIFYME_TGRAM_FILE=/run`/secrets/tgram_notofocation_url. That's all. Now, you can call the endpoint using the `NOTIFYME_TGRAM`  setting in the body:
+You still may set up NotifyMe using the data stored in the docker secret files. Let's say you have a docker secret named `tgram_notofocation_url`, and you want to keep it in the setting named `NOTIFYME_TGRAM`. All you need is to provide the environment variable named `NOTIFYME_TGRAM_FILE` containing the path to the docker secret, i.e., `NOTIFYME_TGRAM_FILE=/run/secrets/tgram_notofocation_url`. That's all. Now, you can call the endpoint using the `NOTIFYME_TGRAM`  setting in the body:
 
 ```json
 {
@@ -90,6 +101,9 @@ In case you want to integrate NotifyMe with the Sentry, you may optionally provi
 - `SENTRY_DSN` - should contain a valid Sentry DSN string.
 - `ENVIRONMENT` - should contain environment name (`production` by default).
 
+### More examples
+Please, visit the [examples](examples) directory for more examples of `docker-compose`-file.
+
 ## Authorization and authentication
 
 The service is designed to be as simple as possible, running without database integration. So no authorization and authentication functionality is expected. 
@@ -100,7 +114,7 @@ Suppose you need such functionality or want to restrict access to the service in
 
 - Python 3.9+
 - [FastAPI](https://github.com/tiangolo/fastapi)
-- [Apprise](caronc/apprise)
+- [Apprise](https://github.com/caronc/apprise)
 
 ## Versioning
 
