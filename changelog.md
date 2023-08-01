@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.2] - 2023-08-01
+
+### Added
+
+- API tests.
+
 ## [1.2.1] - 2023-06-30
 
 ### Changed
@@ -47,7 +53,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - API documentation page.
 - README.md file.
 
-[Unreleased]: https://github.com/s-nagaev/notifyme/compare/v1.2.1...v1.1.0
+[Unreleased]: https://github.com/s-nagaev/notifyme/compare/v1.2.2...v1.1.0
+[1.2.2]: https://github.com/s-nagaev/notifyme/tree/v1.2.2
 [1.2.1]: https://github.com/s-nagaev/notifyme/tree/v1.2.1
 [1.2.0]: https://github.com/s-nagaev/notifyme/tree/v1.2.0
 [1.1.0]: https://github.com/s-nagaev/notifyme/tree/v1.1.0
