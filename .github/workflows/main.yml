@@ -20,12 +20,23 @@ jobs:
         with:
           python-version: "3.10"
       - uses: actions/checkout@v2
-      - name: Install Poetry
+      - name: Install Dev Deps
         run: |
-          pip install poetry
-      - name: Install Deps
-        run: |
-          python -m poetry config virtualenvs.create false && poetry install
+          pip install -r requirements-dev.txt
       - name: Run Mypy
         run: |
           mypy .
+  Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.10"
+      - uses: actions/checkout@v2
+      - name: Install Dev Deps
+        run: |
+          pip install -r requirements-dev.txt
+      - name: Run Tests
+        run: |
+          pytest src/tests/test.py
