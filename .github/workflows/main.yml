@@ -1,5 +1,5 @@
 name: Quality Gate
-on: push
+on: [push, pull_request]
 
 jobs:
   Flake8:
